@@ -2,6 +2,8 @@
 
 Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS.
 
+Live portfolio: [View on Vercel](https://my-portfolio-six-omega-82.vercel.app/)
+
 ## Local development
 
 ```sh
