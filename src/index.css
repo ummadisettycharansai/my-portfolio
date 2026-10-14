@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  body {
+    background-color: #0D0D0D;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #E8541A;
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D0D0D;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .section-heading {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    font-size: clamp(3rem, 8vw, 7rem);
+  }
+
+  .hero-heading {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    font-size: clamp(3.5rem, 9vw, 8.5rem);
+  }
+
+  .profile-card {
+    border-radius: 1.5rem;
+    background-color: #F0EFED;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .nav-pill {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 9999px;
+    padding: 0.5rem 0.75rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    color: rgba(255,255,255,0.6);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-btn:hover {
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  .nav-btn.active {
+    color: white;
+    background-color: rgba(255,255,255,0.15);
+  }
+
+  .project-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .project-row:hover {
+    opacity: 0.75;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: #E8541A;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .project-link:hover {
+    color: white;
+  }
+
+  .skill-category-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+
+  .skill-category-link {
+    color: inherit;
+    text-decoration: none;
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+
+  .skill-category-link:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+  }
+
+  .skill-category-link:focus-visible,
+  button.skill-category-card:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+  }
+
+  .skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.05);
+    transition: all 0.2s ease;
+  }
+
+  .skill-pill:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: white;
+  }
+
+  .experience-card {
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.10);
+    padding: 1.5rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .experience-card:hover {
+    border-color: rgba(255,255,255,0.20);
+  }
+}
+
+@layer utilities {
+  .text-gradient-orange {
+    background: linear-gradient(135deg, #E8541A, #FF8C4B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
